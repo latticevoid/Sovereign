@@ -14,6 +14,8 @@ import random
 import sys
 sys.dont_write_bytecode = True
 import shutil
+from threading import Thread
+from flask import Flask
 
 # Clear __pycache__ on every startup to prevent stale cached versions of cogs
 for cache_dir in ["cogs/__pycache__", "database/__pycache__", "utils/__pycache__"]:
@@ -298,5 +300,25 @@ class DiscordBot(commands.Bot):
 
 
 bot = DiscordBot()
+
+app = Flask(__name__)
+
+# Suppress Flask default logging
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_server():
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
+
+# Run the Flask app in a separate daemon thread
+flask_thread = Thread(target=run_server)
+flask_thread.daemon = True
+flask_thread.start()
+
 bot.run(os.getenv("TOKEN"))
 
