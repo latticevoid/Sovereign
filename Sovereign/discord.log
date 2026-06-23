@@ -1,0 +1,23 @@
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Logged in as Søvereign
+[2026-06-23 09:49:15] [INFO    ] discord_bot: discord.py API version: 2.7.1
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Python version: 3.14.3
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Running on: Windows 11 (nt)
+[2026-06-23 09:49:15] [INFO    ] discord_bot: -------------------
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'activity'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'ai'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'automod'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'dashboard'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'fun'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'general'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'logging'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'massmod'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'moderation'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'modmail'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'owner'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'recovery'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'reputation'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'roles'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'security'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'staff'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'template'
+[2026-06-23 09:49:15] [INFO    ] discord_bot: Loaded extension 'tickets'
