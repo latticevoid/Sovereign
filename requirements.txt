@@ -2,5 +2,6 @@ aiohttp
 aiosqlite
 discord.py==2.7.1
 emoji
+Flask
 groq
 python-dotenv
