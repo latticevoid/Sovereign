@@ -311,8 +311,12 @@ log.setLevel(logging.ERROR)
 def home():
     return "Bot is running!"
 
+@app.route('/ping')
+def ping():
+    return "pong", 200
+
 def run_server():
-    port = int(os.environ.get("PORT", 8080))
+    port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
 
 # Run the Flask app in a separate daemon thread
