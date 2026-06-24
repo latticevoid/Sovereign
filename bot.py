@@ -179,13 +179,15 @@ class DiscordBot(commands.Bot):
                         f"Failed to load extension {extension}\n{exception}"
                     )
 
-    @tasks.loop(minutes=1.0)
+    @tasks.loop(minutes=60.0)
     async def status_task(self) -> None:
         """
         Setup the game status task of the bot.
         """
-        statuses = ["with you!", "with Krypton!", "with humans!"]
-        await self.change_presence(activity=discord.Game(random.choice(statuses)))
+        await self.change_presence(
+            status=discord.Status.idle,
+            activity=discord.CustomActivity(name="in sovereignity")
+        )
 
     @status_task.before_loop
     async def before_status_task(self) -> None:
