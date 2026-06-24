@@ -54,6 +54,16 @@ class DatabaseManager:
             await self.connection.commit()
             return warn_id
 
+    async def add_tempban(self, user_id: int, server_id: int, expires_at: int) -> None:
+        """
+        Adds a tempban to the database.
+        """
+        await self.connection.execute(
+            "INSERT OR REPLACE INTO tempbans(user_id, server_id, expires_at) VALUES (?, ?, ?)",
+            (str(user_id), str(server_id), expires_at)
+        )
+        await self.connection.commit()
+
     async def remove_warn(self, warn_id: int, user_id: int, server_id: int) -> int:
         """
         This function will remove a warn from the database.
@@ -456,6 +466,33 @@ class DatabaseManager:
             return await cursor.fetchall()
 
     # Quarantine config
+    async def get_roles_by_category(self, guild_id: int, category: str) -> list:
+        rows = await self.connection.execute(
+            "SELECT role_id FROM roles WHERE guild_id=? AND category=?",
+            (str(guild_id), category)
+        )
+        async with rows as cursor:
+            result = await cursor.fetchall()
+            return [int(row[0]) for row in result] if result else []
+
+    async def save_story(self, story_id: str, server_id: int, channel_id: int, message_id: int) -> None:
+        await self.connection.execute(
+            "INSERT INTO stories(story_id, server_id, channel_id, message_id) VALUES (?, ?, ?, ?)",
+            (story_id, str(server_id), str(channel_id), str(message_id))
+        )
+        await self.connection.commit()
+
+    async def get_story(self, story_id: str, server_id: int):
+        rows = await self.connection.execute(
+            "SELECT channel_id, message_id FROM stories WHERE story_id=? AND server_id=?",
+            (story_id, str(server_id))
+        )
+        async with rows as cursor:
+            result = await cursor.fetchone()
+            if result:
+                return (int(result[0]), int(result[1]))
+            return None
+
     async def get_quarantine_role(self, server_id: int) -> int | None:
         rows = await self.connection.execute(
             "SELECT role_id FROM quarantine_config WHERE server_id=?",
