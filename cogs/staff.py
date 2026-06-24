@@ -547,31 +547,25 @@ class Staff(commands.Cog, name="staff"):
         name="say",
         description="Opens a modal to make the bot say anything you want.",
     )
-    async def say(self, context: Context) -> None:
+    async def say(self, interaction: discord.Interaction) -> None:
         """
         Opens a modal to make the bot say anything you want.
 
-        :param context: The hybrid command context.
+        :param interaction: The interaction object.
         """
-        if context.interaction:
-            await context.interaction.response.send_modal(SayModal(use_embed=False))
-        else:
-            await context.send("Please use this as a slash command (`/staff say`) to open the formatting modal.")
+        await interaction.response.send_modal(SayModal(use_embed=False))
 
     @staff_group.command(
         name="embed",
         description="Opens a modal to make the bot say anything you want within an embed.",
     )
-    async def embed(self, context: Context) -> None:
+    async def embed(self, interaction: discord.Interaction) -> None:
         """
         Opens a modal to make the bot say anything you want, but using embeds.
 
-        :param context: The hybrid command context.
+        :param interaction: The interaction object.
         """
-        if context.interaction:
-            await context.interaction.response.send_modal(SayModal(use_embed=True))
-        else:
-            await context.send("Please use this as a slash command (`/staff embed`) to open the formatting modal.")
+        await interaction.response.send_modal(SayModal(use_embed=True))
 
     # ── Weekly mod stats task ──────────────────────────────────────────────────
     @tasks.loop(time=datetime.time(hour=0, minute=0))
