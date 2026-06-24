@@ -130,10 +130,15 @@ class Moderation(commands.Cog, name="moderation"):
         extra_users="Comma-separated IDs for mass actions"
     )
     @app_commands.choices(action_type=MOD_ACTIONS)
-    async def mod(self, context: Context, user: discord.User, action_type: app_commands.Choice[str], reason: str = "Not specified", duration: str = None, extra_users: str = None) -> None:
+    async def mod(self, context: Context, user: discord.User, action_type: str, reason: str = "Not specified", duration: str = None, extra_users: str = None) -> None:
         await context.defer()
         
-        val = action_type.value
+        if isinstance(action_type, app_commands.Choice):
+            val = action_type.value
+            action_name = action_type.name
+        else:
+            val = action_type
+            action_name = next((c.name for c in MOD_ACTIONS if c.value == val), val.capitalize())
         
         if val in ["kick"]:
             if not context.author.guild_permissions.kick_members:
@@ -197,17 +202,17 @@ class Moderation(commands.Cog, name="moderation"):
                     try:
                         if member: await member.send(f"You were {val} from **{context.guild.name}**!\nReason: {reason}")
                     except: pass
-                    await context.guild.ban(target, reason=f"[{action_type.name}] {reason}", delete_message_days=delete_days)
+                    await context.guild.ban(target, reason=f"[{action_name}] {reason}", delete_message_days=delete_days)
                     if val == "softban":
                         await context.guild.unban(target, reason="Softban release")
                     success_count += 1
             except discord.Forbidden:
-                await context.send(f"❌ Missing permissions to apply {action_type.name} to {target.mention}.", ephemeral=True)
+                await context.send(f"❌ Missing permissions to apply {action_name} to {target.mention}.", ephemeral=True)
             except Exception as e:
                 self.bot.logger.error(f"Mod error: {e}")
         
         embed = discord.Embed(
-            title=f"🛡️ Action: {action_type.name}",
+            title=f"🛡️ Action: {action_name}",
             description=f"Successfully applied to {success_count} user(s).",
             color=ERROR_COLOR
         )
@@ -227,9 +232,9 @@ class Moderation(commands.Cog, name="moderation"):
         reason="Reason for the action"
     )
     @app_commands.choices(action_type=UNMOD_ACTIONS)
-    async def unmod(self, context: Context, user: discord.User, action_type: app_commands.Choice[str], reason: str = "Not specified") -> None:
+    async def unmod(self, context: Context, user: discord.User, action_type: str, reason: str = "Not specified") -> None:
         await context.defer()
-        val = action_type.value
+        val = action_type.value if isinstance(action_type, app_commands.Choice) else action_type
         
         if val in ["unban", "unblacklist"]:
             if not context.author.guild_permissions.ban_members:
