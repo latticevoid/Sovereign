@@ -186,7 +186,7 @@ class DiscordBot(commands.Bot):
         """
         await self.change_presence(
             status=discord.Status.idle,
-            activity=discord.CustomActivity(name="in sovereignity")
+            activity=discord.CustomActivity(name="👑 Under Sovereign Authority")
         )
 
     @status_task.before_loop
