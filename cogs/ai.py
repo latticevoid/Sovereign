@@ -63,7 +63,7 @@ class AI(commands.Cog, name="ai"):
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": f"Author: {message.author}\nContent: {message.content}"}
                 ],
-                model="llama-3.1-70b-versatile",
+                model="qwen/qwen3-32b",
                 max_tokens=250,
                 temperature=0.3,
                 top_p=0.9,
@@ -252,7 +252,7 @@ class AI(commands.Cog, name="ai"):
                         "content": question,
                     }
                 ],
-                model="llama-3.1-70b-versatile",
+                model="qwen/qwen3-32b",
                 max_tokens=1000,
                 temperature=0.8,
                 top_p=0.9,
@@ -313,7 +313,7 @@ class AI(commands.Cog, name="ai"):
                         "content": f"Write the first part of a story based on: {prompt}",
                     }
                 ],
-                model="llama-3.1-70b-versatile",
+                model="qwen/qwen3-32b",
                 max_tokens=2048,
                 temperature=0.85,
                 top_p=0.9,
@@ -387,7 +387,7 @@ class AI(commands.Cog, name="ai"):
                         "content": f"Here is the story so far:\n\n{previous_story}\n\nPlease seamlessly continue from where it left off.",
                     }
                 ],
-                model="llama-3.1-70b-versatile",
+                model="qwen/qwen3-32b",
                 max_tokens=2048,
                 temperature=0.85,
                 top_p=0.9,
