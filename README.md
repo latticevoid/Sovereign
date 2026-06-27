@@ -21,7 +21,7 @@ It has been customized specifically for the community's needs, providing moderat
 
 This project is maintained by:
 
-* **Developer:** Lattice Void
+* **Developer:** LatticeVoid
 * **Official Server:** Celestial Realm
 * **Server Owner:** `kyrion_sovereign`
 
@@ -162,22 +162,15 @@ docker compose up -d --build
 
 **Developer**
 
-> Lattice Void
+> LatticeVoid
 
 **Server Owner**
 
 > kyrion_sovereign
----
-
-# 📜 Original Repository
-
-https://github.com/kkrypt0nn/Python-Discord-Bot-Template
 
 ---
 
 # 📄 License
-
-This project follows the licensing requirements of the original template.
 
 Please read:
 
@@ -192,5 +185,5 @@ before redistributing or modifying this project.
 <p align="center">
   <b>Sovereign</b><br>
   Crafted for <b>Celestial Realm</b><br>
-  Developed by <b>Lattice Void</b> • Server owned by <b>kyrion_sovereign</b>
+  Developed by <b>LatticeVoid</b> • Server owned by <b>kyrion_sovereign</b>
 </p>
