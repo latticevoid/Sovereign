@@ -24,35 +24,6 @@ This project is maintained by:
 * **Developer:** LatticeVoid
 * **Official Server:** Celestial Realm
 * **Server Owner:** `kyrion_sovereign`
-
----
-
-## ✨ Credits
-
-This project is based on the excellent **Python Discord Bot Template** created by **kkrypt0nn**.
-
-Original Repository:
-
-https://github.com/kkrypt0nn/Python-Discord-Bot-Template
-
-This project contains modifications and custom implementations while retaining the required credits and license for the original work.
-
----
-
-## 📖 About the Base Template
-
-The original template provides:
-
-* Cog-based architecture
-* Slash Commands
-* Hybrid Commands
-* Environment configuration
-* Docker support
-* Modular project structure
-* Discord.py best practices
-
-Many thanks to **kkrypt0nn** for providing such a solid foundation.
-
 ---
 
 # ⚠ License Notice
