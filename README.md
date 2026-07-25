@@ -1,70 +1,49 @@
-# Sovereign Discord Bot
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Built%20For-Celestial%20Realm-5865F2?style=for-the-badge&logo=discord&logoColor=white">
-  <img src="https://img.shields.io/badge/Bot-Sovereign-7289DA?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Made%20By-Lattice%20Void-111827?style=for-the-badge">
-</p>
+# 👑 Sovereign
 
-<p align="center">
-  <b>A premium Discord management bot built exclusively for the Celestial Realm community.</b><br>
-  Designed, customized, and maintained by <b>LatticeVoid</b>.
-</p>
+### Modern Discord Management Bot
 
----
+*Powerful moderation • Ticketing • Automation • Logging*
 
-## 👑 About
+Built with **Python** & **discord.py**
 
-**Sovereign** is the official management bot developed for **Celestial Realm**.
-
-It has been customized specifically for the community's needs, providing moderation, ticket management, utility systems, automation, logging, transcript generation, and server management features under one cohesive experience.
-
-This project is maintained by:
-
-* **Developer:** LatticeVoid
-* **Official Server:** Celestial Realm
-* **Server Owner:** `kyrion_sovereign`
----
-
-# ⚠ License Notice
-
-This repository contains code originating from the **Python Discord Bot Template**.
-
-As required by the original author:
-
-* Original credits have been preserved.
-* The original license remains in effect for unchanged portions of the project.
-* Custom features and modifications have been added on top of the original template.
-
-Please refer to the included **LICENSE.md** for complete licensing information.
+</div>
 
 ---
 
-# 🚀 Features
+## ✨ About
 
-Sovereign includes numerous custom systems built for Celestial Realm, including (depending on enabled modules):
+**Sovereign** is an open-source Discord management bot designed to provide everything a community needs in one place.
 
-* 🎫 Advanced Ticket System
-* 📝 Beautiful HTML Ticket Transcripts
-* 🛡 Moderation Utilities
-* 📜 Logging
-* ⚙ Automation
-* 👥 Role Management
-* 🔔 Welcome & Leave Messages
-* 🤖 Slash Commands
-* 💬 Hybrid Commands
-* 📊 Server Utilities
-* 🔒 Permission Systems
-* ✨ Various Quality-of-Life Features
+From moderation and ticket management to logging, automation, and utility commands, Sovereign is built to be powerful, customizable, and easy to extend. Whether you're running a small community or a large public server, Sovereign helps simplify server management without sacrificing flexibility.
 
 ---
 
-# 📦 Installation
+## 🚀 Features
+
+| | |
+|:--|:--|
+| 🛡 **Moderation** | Ban, Kick, Timeout, Warn, Purge, Slowmode, and more |
+| 🎫 **Ticket System** | Configurable support tickets with HTML transcripts |
+| 📜 **Logging** | Comprehensive server event logging |
+| ⚙️ **Automation** | Welcome messages, auto roles, and utility systems |
+| 👥 **Role Management** | Easy role and permission management |
+| 🤖 **Slash Commands** | Full application command support |
+| 💬 **Hybrid Commands** | Works with both slash and prefix commands |
+| 📊 **Utilities** | Helpful commands for members and staff |
+| 🔒 **Permissions** | Granular permission checks and security |
+| ✨ **Extensible** | Modular architecture for adding new features |
+
+---
+
+## 📦 Installation
 
 Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/LatticeVoid/Sovereign.git
+cd Sovereign
 ```
 
 Install dependencies:
@@ -73,31 +52,29 @@ Install dependencies:
 python -m pip install -r requirements.txt
 ```
 
-Configure your environment variables by renaming:
+Rename:
 
-```
+```text
 .env.example
 ```
 
-to
+to:
 
-```
+```text
 .env
 ```
 
-Fill in your bot token and required configuration.
+Fill in your bot token and other required configuration values.
 
 ---
 
-# ▶ Running
-
-Start the bot using:
+## ▶ Running
 
 ```bash
 python bot.py
 ```
 
-Depending on your installation you may instead use:
+Depending on your environment, you may instead use:
 
 ```bash
 py bot.py
@@ -111,9 +88,9 @@ python3 bot.py
 
 ---
 
-# 🐳 Docker
+## 🐳 Docker
 
-Docker is supported.
+Run Sovereign using Docker Compose:
 
 ```bash
 docker compose up -d --build
@@ -121,40 +98,53 @@ docker compose up -d --build
 
 ---
 
-# 📁 Project Information
+## 🤝 Contributing
 
-**Bot Name**
+Contributions are welcome!
 
-> Sovereign
+If you'd like to improve Sovereign:
 
-**Community**
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Open a Pull Request.
 
-> Celestial Realm
-
-**Developer**
-
-> LatticeVoid
-
-**Server Owner**
-
-> kyrion_sovereign
+Bug reports, feature requests, and suggestions are always appreciated.
 
 ---
 
-# 📄 License
+## ⚠ License Notice
 
-Please read:
+This project originated from the **Python Discord Bot Template**.
 
-```
-LICENSE.md
-```
+In accordance with the original license:
 
-before redistributing or modifying this project.
+- Original copyright notices and credits have been preserved.
+- The original license remains in effect where applicable.
+- Sovereign includes substantial custom features and modifications built on top of the original project.
+
+Please read **LICENSE.md** before redistributing or modifying this project.
 
 ---
 
-<p align="center">
-  <b>Sovereign</b><br>
-  Crafted for <b>Celestial Realm</b><br>
-  Developed by <b>LatticeVoid</b> • Server owned by <b>kyrion_sovereign</b>
-</p>
+## 👨‍💻 Developer
+
+Created and maintained by **LatticeVoid**.
+
+Sovereign is an open-source project focused on building a modern, reliable, and feature-rich Discord management experience.
+
+---
+
+## 📄 License
+
+This project is licensed under the terms described in **LICENSE.md**.
+
+---
+
+<div align="center">
+
+Made with ❤️ for Discord communities.
+
+**Sovereign** © LatticeVoid
+
+</div>
