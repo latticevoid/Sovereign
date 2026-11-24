@@ -22,7 +22,7 @@ From moderation and ticket management to logging, automation, and utility comman
 
 ## 🚀 Features
 
-| | |
+| Features| Description|
 |:--|:--|
 | 🛡 **Moderation** | Ban, Kick, Timeout, Warn, Purge, Slowmode, and more |
 | 🎫 **Ticket System** | Configurable support tickets with HTML transcripts |
@@ -84,16 +84,6 @@ or
 
 ```bash
 python3 bot.py
-```
-
----
-
-## 🐳 Docker
-
-Run Sovereign using Docker Compose:
-
-```bash
-docker compose up -d --build
 ```
 
 ---
